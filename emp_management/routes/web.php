@@ -25,4 +25,9 @@ Route::view('/gallery',"gallery");
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('checkrollid');
+Route::view('/homepages',"homepage");
+
+Route::prefix('admin')->group(function(){
+Route::view('/admindashboard',"admin.admindashboard");
+});
