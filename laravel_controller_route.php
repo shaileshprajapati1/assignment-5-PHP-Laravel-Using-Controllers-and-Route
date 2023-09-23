@@ -21,23 +21,59 @@
                 <p>The route is a way of creating a request URL for your application.</p>
             </li>
         </ul>
-        
+
         How to pass Multiple Variable in route?
         <ul>
             <li>
                 <p>To create a route that accepts multiple parameters, I can simply add them within curly braces {}. That looks something like this:
-                    <li>// routes/web.php</li>
-                    <li>Route::post('/saveusers/{id}', [App\Http\Controllers\HomeController::class, 'store']);</li>
-                </p>
+            <li>// routes/web.php</li>
+            <li>Route::post('/saveusers/{id}', [App\Http\Controllers\HomeController::class, 'store']);</li>
+            </p>
             </li>
         </ul>
         How to pass variable which can be null in Route?
         <ul>
             <li>
-                <p></p>
+                <p>We can also assign a null value to a variable by using the data type None, and we can check the value of the variable by using the identity operator (is, is not).
+            <li>Route::post('/saveusers/{id?}', [App\Http\Controllers\HomeController::class, 'store']);</li>
+            </p>
             </li>
         </ul>
-        
+        How to remove route caching?
+        <ul>
+            <li>
+                <p>While building Laravel applications, sometimes, the changes in the code are not reflected. This issue usually occurs due to caching.</p>
+                <ul>
+
+                    <ul> Clear Application Cache
+                        <li> For running the laravel application cache, run the following artisan command:</li>
+
+                        <li> php artisan cache:clear </li>
+                    </ul>
+                    <ul>
+                        Clear Route Cache
+                        <li> To clear the route cache of your Laravel application, run the below artisan command:</li>
+                        <li>php artisan route:clear</li>
+                    </ul>
+
+
+                    <ul>
+                        Clear Configuration Cache
+                        <li>If you want to clear the config cache of your Laravel application, run the command:</li>
+                        <li>php artisan config:clear</li>
+                    </ul>
+
+
+                    <ul>
+                        Clear Compiled Views Cache
+                        <li>If you need to clear and view cache of your laravel application, simply run the artisan command given below:</li>
+
+                        <li>php artisan view:clear</li>
+                    </ul>
+                </ul>
+            </li>
+        </ul>
+
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
