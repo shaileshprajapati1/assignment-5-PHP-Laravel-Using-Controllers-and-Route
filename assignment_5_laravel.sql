@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2023 at 07:51 AM
+-- Generation Time: Sep 24, 2023 at 06:58 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -116,6 +116,7 @@ CREATE TABLE `users` (
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `role_id` int(11) NOT NULL DEFAULT 2,
+  `profile_pic` varchar(255) NOT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -125,9 +126,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role_id`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Shailesh prajapati', 'sh@gmail.com', NULL, '$2y$10$u2kpVmd4N7EHzbOZ4KZ9TOZ/Kpq6Wpj.pgwY0iIkJk78o7V8RJxjO', 1, NULL, '2023-09-23 01:08:37', '2023-09-23 01:08:37'),
-(2, 'shiv prajapati', 'shiv@gmail.com', NULL, '$2y$10$UxpeAF7MNKBywUVCEcnaW.5orlSTQWmZaAsMBvnay.cE6gtuSu0kS', 2, NULL, '2023-09-23 02:49:31', '2023-09-23 02:49:31');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role_id`, `profile_pic`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Shailesh prajapati', 'sh@gmail.com', NULL, '$2y$10$oYtxFH6Dw0z4fcQy3wD.j.FiH9Ai0ID9fAFOSl9YfHy9nUfoTFtkC', 1, '1695574363.jpg', NULL, '2023-09-24 11:22:43', '2023-09-24 11:22:43'),
+(2, 'shiv prajapati', 'shiv@gmail.com', NULL, '$2y$10$H8mov/J9/H7ZBXt8hEalWObAz5OW3zJ4T4epM/2rUGuZIRYxpbbAW', 2, '1695574681.jpg', NULL, '2023-09-24 11:28:01', '2023-09-24 11:28:01');
 
 --
 -- Indexes for dumped tables

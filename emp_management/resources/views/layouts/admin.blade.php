@@ -250,7 +250,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                                         aria-expanded="false">
                                         <div class="profile_img">
-                                            {{-- <span class="prfil-img"><img src="images/p1.png" alt=""> </span> --}}
+                                            <span class="prfil-img"><img src="/Uploads/{{ Auth::user()->profile_pic }}" width="50px" height="50px" alt=""> </span>
                                             <div class="user-name">
                                                 <p> {{ Auth::user()->name }}</p>
                                                 <span>Administrator</span>

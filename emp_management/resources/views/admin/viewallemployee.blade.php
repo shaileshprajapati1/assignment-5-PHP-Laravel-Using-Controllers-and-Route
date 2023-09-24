@@ -26,7 +26,7 @@
                             <td> {{ $data->name }} </td>
                             <td> {{ $data->email }} </td>
                             <td>
-                                <img src="/Uploads/{{ $data->profile_pic }}" width="100px" height="100px" alt="">
+                                <img src="/Uploads/{{ $data->profile_pic }}" width="50px" height="50px" alt="">
                             </td>
                             <td> {{ $data->id }} </td>
 
