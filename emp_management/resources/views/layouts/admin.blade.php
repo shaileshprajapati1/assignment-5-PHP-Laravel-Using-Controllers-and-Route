@@ -119,7 +119,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="header-main">
                     <div class="header-left">
                         <div class="logo-name">
-                            <a href="index.html">
+                            <a href="admindashboard">
                                 <h1>Shoppy</h1>
                                 <!--<img id="logo" src="" alt="Logo"/>-->
                             </a>
@@ -136,12 +136,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="header-right">
                         <div class="profile_details_left"><!--notifications of menu start -->
                             <ul class="nofitications-dropdown">
-                                <li class="dropdown head-dpdn">
+                                {{-- <li class="dropdown head-dpdn">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                                         aria-expanded="false"><i class="fa fa-envelope"></i><span
                                             class="badge">3</span></a>
-                                   
-                                </li>
+
+                                </li> --}}
                                 <li class="dropdown head-dpdn">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                                         aria-expanded="false"><i class="fa fa-bell"></i><span
@@ -153,14 +153,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </div>
                                         </li>
                                         <li><a href="#">
-                                                <div class="user_img"><img src="images/p5.png" alt=""></div>
+                                                {{-- <div class="user_img"><img src="images/p5.png" alt=""></div> --}}
                                                 <div class="notification_desc">
                                                     <p>Lorem ipsum dolor</p>
                                                     <p><span>1 hour ago</span></p>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </a></li>
-                                        <li class="odd"><a href="#">
+                                        {{-- <li class="odd"><a href="#">
                                                 <div class="user_img"><img src="images/p6.png" alt=""></div>
                                                 <div class="notification_desc">
                                                     <p>Lorem ipsum dolor</p>
@@ -180,10 +180,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <div class="notification_bottom">
                                                 <a href="#">See all notifications</a>
                                             </div>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </li>
-                                <li class="dropdown head-dpdn">
+                                {{-- <li class="dropdown head-dpdn">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                                         aria-expanded="false"><i class="fa fa-tasks"></i><span
                                             class="badge blue1">9</span></a>
@@ -239,7 +239,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </div>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
                             </ul>
                             <div class="clearfix"> </div>
                         </div>
@@ -250,9 +250,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                                         aria-expanded="false">
                                         <div class="profile_img">
-                                            <span class="prfil-img"><img src="images/p1.png" alt=""> </span>
+                                            {{-- <span class="prfil-img"><img src="images/p1.png" alt=""> </span> --}}
                                             <div class="user-name">
-                                                <p>Malorum</p>
+                                                <p> {{ Auth::user()->name }}</p>
                                                 <span>Administrator</span>
                                             </div>
                                             <i class="fa fa-angle-down lnr"></i>
@@ -261,9 +261,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </div>
                                     </a>
                                     <ul class="dropdown-menu drp-mnu">
-                                        <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li>
+                                        {{-- <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> --}}
                                         <li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li>
-                                        <li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                                        <li> <a class="dropdown-item" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                          document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
+                                                @csrf
+                                            </form>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -311,14 +321,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </a> </div>
             <div class="menu">
                 <ul id="menu">
-                    <li id="menu-home"><a href="index.html"><i
+                    <li id="menu-home"><a href="admindashboard"><i
                                 class="fa fa-tachometer"></i><span>Dashboard</span></a>
                     </li>
                     <li><a href="#"><i class="fa fa-users"></i><span>Employee</span><span
                                 class="fa fa-angle-right" style="float: right"></span></a>
                         <ul>
-                            <li><a href="grids.html">Add Employee</a></li>
-                            <li><a href="portlet.html">View All Employee</a></li>
+                            <li><a href="addemp">Add Employee</a></li>
+                            <li><a href="viewallemployee">View All Employee</a></li>
                         </ul>
                     </li>
                     <li><a href="#"><i class="fa fa-picture-o"></i><span>Gallery</span><span
@@ -346,7 +356,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li id="menu-academico-avaliacoes"><a href="signup.html">Sign Up</a></li>
                         </ul>
                     </li> --}}
-{{-- 
+                    {{-- 
                     <li><a href="charts.html"><i class="fa fa-bar-chart"></i><span>Charts</span></a></li>
                     <li><a href="#"><i class="fa fa-envelope"></i><span>Mailbox</span><span
                                 class="fa fa-angle-right" style="float: right"></span></a>

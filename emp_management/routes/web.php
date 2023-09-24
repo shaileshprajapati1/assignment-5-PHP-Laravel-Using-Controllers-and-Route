@@ -29,5 +29,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->midd
 Route::view('/homepages',"homepage");
 
 Route::prefix('admin')->group(function(){
-Route::view('/admindashboard',"admin.admindashboard");
+    Route::view('/admindashboard',"admin.admindashboard");
+    // Route::view('/addemp',"admin.addemployee");
+    Route::any('/addemp', [App\Http\Controllers\EmployeeController::class, 'create']);
+    Route::any('/saveemployee', [App\Http\Controllers\EmployeeController::class, 'store']);
+    Route::any('/viewallemployee', [App\Http\Controllers\EmployeeController::class, 'index']);
+    
+
+
 });
