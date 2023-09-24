@@ -120,7 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="header-left">
                         <div class="logo-name">
                             <a href="admindashboard">
-                                <h1>Shoppy</h1>
+                                <h1>EMS</h1>
                                 <!--<img id="logo" src="" alt="Logo"/>-->
                             </a>
                         </div>

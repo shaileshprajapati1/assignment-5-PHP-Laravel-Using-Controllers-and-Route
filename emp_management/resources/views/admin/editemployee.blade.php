@@ -7,8 +7,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header" style="background: gray; color:#f1f7fa; font-weight:bold;">
-                        Create New Employee
-                        <a href="viewallemployee" class="btn btn-success btn-xs py-0 float-end">Back</a>
+                        Update Employee
+                        {{-- <a href="viewallemployee" class="btn btn-success btn-xs py-0 float-end">Back</a> --}}
                     </div>
                     @if (session('message'))
                         <div class="alert alert-{{ session('status') }} alert-dismissible fade show mt-5" role="alert">
@@ -16,30 +16,28 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     @endif
+                    
                     <div class="card-body">
-                        {{ Form::open(['url' => 'admin/saveemployee', 'enctype' => 'multipart/form-data', 'method' => 'post']) }}
+                        {{ Form::open(['url' => 'admin/updatedata/'.$editemployee->id, 'enctype' => 'multipart/form-data', 'method' => 'post']) }}
 
                         <div class="form-group">
                             {{ Form::label('name', 'Name') }}
-                            {{ Form::text('name', '', ['class' => 'form-control']) }}
+                            {{ Form::text('name', $editemployee['name'] , ['class' => 'form-control']) }}
                         </div>
 
                         <div class="form-group">
                             {{ Form::label('email', 'Email') }}
-                            {{ Form::email('email', '', ['class' => 'form-control']) }}
+                            {{ Form::email('email', $editemployee['email'] , ['class' => 'form-control']) }}
                         </div>
-                        <div class="form-group">
-                            {{ Form::label('password', 'Password') }}
-                            {{ Form::password('password', ['class' => 'form-control']) }}
-                        </div>
-
+                       
                         <div class="form-group">
                             {{ Form::label('profile_pic', 'profile_pic') }}
                             {{ Form::file('profile_pic', ['class' => 'form-control']) }}
+                           <img src="/Uploads/{{ $editemployee['profile_pic'] }}" width="100px" height="100px" alt="">
                         </div>
 
 
-                        {{ Form::submit('Add Employee', ['class' => 'btn btn-primary']) }}
+                        {{ Form::submit('Update Employee', ['class' => 'btn btn-primary']) }}
 
                         {{ Form::close() }}
 
