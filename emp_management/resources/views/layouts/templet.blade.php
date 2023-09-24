@@ -139,8 +139,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="col-md-4 footer_grid">
                 <h3>Contact Info</h3>
                 <ul class="address">
-                    <li><i class="fa fa-map-marker" aria-hidden="true"></i>8088 USA, Honey block, <span>New York
-                            City.</span></li>
+                    <li><i class="fa fa-map-marker" aria-hidden="true"></i>thaltej ,ahemedabad 380054. <span>ahemedabd city.</span></li>
                     <li><i class="fa fa-envelope" aria-hidden="true"></i><a
                             href="mailto:info@example.com">info@example.com</a></li>
                     <li><i class="fa fa-phone" aria-hidden="true"></i>+09187 8088 9436</li>

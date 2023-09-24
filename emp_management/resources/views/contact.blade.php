@@ -44,7 +44,7 @@
                         <div class="mail-agileits-w3layouts">
                             <i class="fa fa-map-marker" aria-hidden="true"></i>
                             <div class="contact-right">
-                                <p>Location</p><span>8088 USA, Honey block,New York City.</span>
+                                <p>Location</p><span>thaltej ,ahemedabad 380054.</span>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
