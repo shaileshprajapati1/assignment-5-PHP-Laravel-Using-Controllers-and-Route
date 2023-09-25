@@ -17,6 +17,13 @@ class GalleryController extends Controller
         // dd($allphotos);
         return view("admin\alliamges",compact('allphotos'));
     }
+    public function homeindex(Gallery $gallery)
+    {
+        // dd("call");
+        $allphotos = $gallery->all();
+        // dd($allphotos);
+        return view("/gallery",compact('allphotos'));
+    }
 
     /**
      * Show the form for creating a new resource.

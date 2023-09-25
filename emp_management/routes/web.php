@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::view('/about',"about");
 Route::view('/contact',"contact");
-Route::view('/gallery',"gallery");
+// Route::view('/gallery',"gallery");
 
 
 
@@ -27,6 +27,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('checkrollid');
 Route::view('/homepages',"homepage");
+Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'homeindex']);
 
 Route::prefix('admin')->group(function(){
     Route::view('/admindashboard',"admin.admindashboard");

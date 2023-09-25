@@ -20,16 +20,17 @@
                 <div class="tittle_head_w3ls">
                     <h3 class="tittle">Our Gallery</h3>
                 </div>
-                <div class="inner_sec_grids_info_w3ls">
-                    <div class="col-md-4 blog-grid one">
-                        <img src="{{ url('Assest/images/e6.jpg') }}" alt="">
-                        {{-- <div class="events_info">
-                            <h5>Oct 12,2017</h5>
+                @foreach ($allphotos as $item)
+                    <div class="inner_sec_grids_info_w3ls">
+                        <div class="col-md-4 blog-grid one">
+                            <img src="/Allphotos/{{ $item['Images'] }}" width="100px" height="200px" alt="">
+                            {{-- <div class="events_info">
+                                <h5>Oct 12,2017</h5>
                             <h4>Talent Programmes</h4>
                             <p>Lorem ipsum dolor sit amet,vehicula vel sapien et, feugiat sapien amet.</p>
 
                         </div> --}}
-                    </div>
+                            {{-- </div>
                     <div class="col-md-4 blog-grid one">
                         <img src="{{ url('Assest/images/e5.jpg') }}" alt="">
                        
@@ -49,12 +50,13 @@
                     <div class="col-md-4 blog-grid lost">
                         <img src="{{ url('Assest/images/e3.jpg') }}" alt="">
                        
+                    </div> --}}
+                            <div class="clearfix"></div>
+
+                        </div>
+
                     </div>
-                    <div class="clearfix"></div>
-
-                </div>
-
+                @endforeach
             </div>
         </div>
-    </div>
-@endsection
+    @endsection
