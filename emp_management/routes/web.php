@@ -36,6 +36,7 @@ Route::prefix('admin')->group(function(){
     Route::any('/viewallemployee', [App\Http\Controllers\EmployeeController::class, 'index']);
     Route::any('/editemployee/{eid}',[App\Http\Controllers\EmployeeController::class, 'show']);
     Route::any('/updatedata/{eid}',[App\Http\Controllers\EmployeeController::class, 'update']);
+    Route::any('/deleteemployee/{eid}',[App\Http\Controllers\EmployeeController::class, 'destroy']);
     
 
 

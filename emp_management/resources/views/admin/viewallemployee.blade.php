@@ -4,7 +4,7 @@
     <div class="inner-block">
 
         <div class="market-updates">
-            <div class="card-header" >
+            <div class="card-header">
                 <a href="addemp" class="btn btn-success ">Add Employee</a>
             </div>
             <h1 class="text-center">All Employee</h1>
@@ -23,8 +23,8 @@
                 <tbody>
                     <?php $i = 0; ?>
                     @foreach ($employees as $data)
-                        
-                        @if ($data->role_id == 2)<?php $i++; ?>
+                        @if ($data->role_id == 2)
+                            <?php $i++; ?>
                             <tr>
                                 <td> {{ $i }} </td>
                                 <td> {{ $data->name }} </td>
@@ -33,9 +33,11 @@
                                     <img src="/Uploads/{{ $data->profile_pic }}" width="50px" height="50px" alt="">
                                 </td>
                                 <td>
-                                    <a href="editemployee/{{ $data->id }}"><i class="fa fa-pencil-square-o"  aria-hidden="true"></i></a>
-                                 &nbsp; &nbsp;  <a href="deleteemployee/{{ $data->id }}"><i class="fa fa-trash-o" aria-hidden="true"></i>
-                                 </a>
+                                    <a href="editemployee/{{ $data->id }}"><i class="fa fa-pencil-square-o"
+                                            aria-hidden="true"></i></a>
+                                    &nbsp; &nbsp; <a href="deleteemployee/{{ $data->id }}"
+                                        onclick="return myFunction();"><i class="fa fa-trash-o" aria-hidden="true"></i>
+                                    </a>
                                 </td>
 
 
@@ -48,5 +50,11 @@
             </table>
 
         </div>
+        <script>
+            function myFunction() {
+                if (!confirm("Are You Sure to delete this"))
+                    event.preventDefault();
+            }
+        </script>
     </div>
 @endsection

@@ -102,8 +102,12 @@ class EmployeeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Employee $employee)
+    public function destroy($eid,Employee $employee)
     {
-        //
+        $Deleteemployee = $employee::find($eid);
+        // dd($Deleteemployee);
+        $Deleteemployee->delete();
+        return redirect("admin/viewallemployee");
+        
     }
 }
