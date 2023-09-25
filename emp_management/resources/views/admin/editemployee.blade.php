@@ -18,7 +18,8 @@
                     @endif
                     
                     <div class="card-body">
-                        {{ Form::open(['url' => 'admin/updatedata/'.$editemployee->id, 'enctype' => 'multipart/form-data', 'method' => 'post']) }}
+                    
+                        {{ Form::open(['url' => 'admin/updatedata/'.$editemployee->id , 'enctype' => 'multipart/form-data', 'method' => 'post']) }}
 
                         <div class="form-group">
                             {{ Form::label('name', 'Name') }}
@@ -34,6 +35,7 @@
                             {{ Form::label('profile_pic', 'profile_pic') }}
                             {{ Form::file('profile_pic', ['class' => 'form-control']) }}
                            <img src="/Uploads/{{ $editemployee['profile_pic'] }}" width="100px" height="100px" alt="">
+                           <input type="hidden" name="old_profile_pic" value="{{ $editemployee['profile_pic'] }}">
                         </div>
 
 
