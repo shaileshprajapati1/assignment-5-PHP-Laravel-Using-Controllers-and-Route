@@ -334,8 +334,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li><a href="#"><i class="fa fa-picture-o"></i><span>Gallery</span><span
                                 class="fa fa-angle-right" style="float: right"></span></a>
                         <ul>
-                            <li><a href="grids.html">Add Image</a></li>
-                            <li><a href="portlet.html">View All Images</a></li>
+                            <li><a href="addimages">Add Image</a></li>
+                            <li><a href="viewphotos">View All Images</a></li>
                         </ul>
                     </li>
                     {{-- <li id="menu-comunicacao"><a href="#"><i

@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use Illuminate\Http\Request;
+use Validator;
 
 class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Gallery $gallery)
     {
-        //
+        $allphotos = $gallery->all();
+        // dd($allphotos);
+        return view("admin\alliamges",compact('allphotos'));
     }
 
     /**
@@ -20,23 +23,41 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin/addimages");
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Gallery $gallery)
     {
-        //
-    }
+       
+       
+        $rules = array(
+            'Images' => 'mimes:jpeg,jpg,png,gif|required|max:10000',
+        );
+        $validator = Validator::make($request->all(), $rules);
+        // dd($validator);
+        if ($validator->fails()) {
+            return Redirect('admin/addimages')
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            
+            $imageNames = time() . '.' . $request->Images->getClientOriginalExtension();
+            $request->Images->move(public_path('/Allphotos'), $imageNames);
 
+            $gallery->Images = $imageNames;
+            $gallery->save();
+            return redirect("admin/viewphotos");
+        }
+    }
     /**
      * Display the specified resource.
      */
     public function show(Gallery $gallery)
     {
-        //
+       //
     }
 
     /**
@@ -58,8 +79,13 @@ class GalleryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Gallery $gallery)
+    public function destroy($pid,Gallery $gallery)
     {
-        //
+      $gallerys = $gallery::find($pid);
+      
+      $gallerys->delete();
+
+      return redirect("admin/viewphotos");
+
     }
 }

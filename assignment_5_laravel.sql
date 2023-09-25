@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2023 at 06:58 PM
+-- Generation Time: Sep 25, 2023 at 11:36 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -40,6 +40,28 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `galleries`
+--
+
+CREATE TABLE `galleries` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `Images` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `galleries`
+--
+
+INSERT INTO `galleries` (`id`, `Images`, `created_at`, `updated_at`) VALUES
+(1, '1695633987.jpg', '2023-09-25 03:56:27', '2023-09-25 03:56:27'),
+(2, '1695634555.jpg', '2023-09-25 04:05:55', '2023-09-25 04:05:55'),
+(3, '1695634565.jpg', '2023-09-25 04:06:05', '2023-09-25 04:06:05');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -58,7 +80,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
 (3, '2014_10_12_100000_create_password_resets_table', 1),
 (4, '2019_08_19_000000_create_failed_jobs_table', 1),
-(5, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+(5, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(7, '2023_09_25_081427_create_galleries_table', 2);
 
 -- --------------------------------------------------------
 
@@ -128,7 +151,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role_id`, `profile_pic`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Shailesh prajapati', 'sh@gmail.com', NULL, '$2y$10$oYtxFH6Dw0z4fcQy3wD.j.FiH9Ai0ID9fAFOSl9YfHy9nUfoTFtkC', 1, '1695574363.jpg', NULL, '2023-09-24 11:22:43', '2023-09-24 11:22:43'),
-(2, 'shiv prajapati', 'shiv@gmail.com', NULL, '$2y$10$H8mov/J9/H7ZBXt8hEalWObAz5OW3zJ4T4epM/2rUGuZIRYxpbbAW', 2, '1695574681.jpg', NULL, '2023-09-24 11:28:01', '2023-09-24 11:28:01');
+(2, 'shiv prajapati', 'shiv@gmail.com', NULL, '$2y$10$H8mov/J9/H7ZBXt8hEalWObAz5OW3zJ4T4epM/2rUGuZIRYxpbbAW', 2, '1695628958.jpg', NULL, '2023-09-24 11:28:01', '2023-09-25 02:32:38'),
+(4, 'ranjeet singh', 'ranjit@gmail.com', NULL, '$2y$10$rViPpxYbQP3veg8hrYgHFOu0a.giVV2iYxbBNHPiYZOGfYewVsbBW', 2, '1695629424.jpg', NULL, '2023-09-25 02:40:24', '2023-09-25 02:40:24');
 
 --
 -- Indexes for dumped tables
@@ -140,6 +164,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ro
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `galleries`
+--
+ALTER TABLE `galleries`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
@@ -185,10 +215,16 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `galleries`
+--
+ALTER TABLE `galleries`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -200,7 +236,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

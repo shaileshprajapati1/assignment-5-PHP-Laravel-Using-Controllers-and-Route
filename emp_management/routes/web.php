@@ -37,6 +37,11 @@ Route::prefix('admin')->group(function(){
     Route::any('/editemployee/{eid}',[App\Http\Controllers\EmployeeController::class, 'show']);
     Route::any('/updatedata/{eid}',[App\Http\Controllers\EmployeeController::class, 'update']);
     Route::any('/deleteemployee/{eid}',[App\Http\Controllers\EmployeeController::class, 'destroy']);
+
+    Route::any('/addimages',[App\Http\Controllers\GalleryController::class, 'create']);
+    Route::any('/saveimage',[App\Http\Controllers\GalleryController::class, 'store']);
+    Route::any('/viewphotos',[App\Http\Controllers\GalleryController::class, 'index']);
+    Route::any('/deleteimage/{pid}',[App\Http\Controllers\GalleryController::class, 'destroy']);
     
 
 
