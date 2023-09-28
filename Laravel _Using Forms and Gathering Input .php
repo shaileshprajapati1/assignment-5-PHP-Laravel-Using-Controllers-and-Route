@@ -18,61 +18,36 @@
         Explain ORM ?
         <ul>
             <li>
-                <p>The route is a way of creating a request URL for your application.</p>
+                <p>Eloquent ORM (Object Relation Mapper) is easy to use for users who know how to use objects in PHP.</p>
+            </li>
+            <li>
+                <p>The ORM is an important feature of the Laravel framework, considered a powerful and expensive feature of Laravel. The ORM works with database objects and is used to make relationships with database tables.</p>
+            </li>
+            <li>
+                <p>Each table of the database is mapped with a particular eloquent model.The model object contains various methods to retrieve and update data from the database table. </p>
+            </li>
+            <li>
+                <p>Eloquent ORM can be used with multiple databases by implementing ActiveMethod. This feature makes database-related tasks, such as defining relationships, simpler by defining the database tables. </p>
             </li>
         </ul>
-
-        How to pass Multiple Variable in route?
+        Explain - Eloquent Relationships ?
         <ul>
             <li>
-                <p>To create a route that accepts multiple parameters, I can simply add them within curly braces {}. That looks something like this:
-            <li>// routes/web.php</li>
-            <li>Route::post('/saveusers/{id}', [App\Http\Controllers\HomeController::class, 'store']);</li>
-            </p>
+                <p>When working with tables in a relational database, we can characterize relationships as connections between tables. This helps you organize and structure data effortlessly allowing for superior readability and handling of data.</p>
             </li>
-        </ul>
-        How to pass variable which can be null in Route?
-        <ul>
             <li>
-                <p>We can also assign a null value to a variable by using the data type None, and we can check the value of the variable by using the identity operator (is, is not).
-            <li>Route::post('/saveusers/{id?}', [App\Http\Controllers\HomeController::class, 'store']);</li>
-            </p>
-            </li>
-        </ul>
-        How to remove route caching?
-        <ul>
-            <li>
-                <p>While building Laravel applications, sometimes, the changes in the code are not reflected. This issue usually occurs due to caching.</p>
+                <p>There are three types of database relationships in practice:</p>
                 <ul>
-
-                    <ul> Clear Application Cache
-                        <li> For running the laravel application cache, run the following artisan command:</li>
-
-                        <li> php artisan cache:clear </li>
-                    </ul>
-                    <ul>
-                        Clear Route Cache
-                        <li> To clear the route cache of your Laravel application, run the below artisan command:</li>
-                        <li>php artisan route:clear</li>
-                    </ul>
-
-
-                    <ul>
-                        Clear Configuration Cache
-                        <li>If you want to clear the config cache of your Laravel application, run the command:</li>
-                        <li>php artisan config:clear</li>
-                    </ul>
-
-
-                    <ul>
-                        Clear Compiled Views Cache
-                        <li>If you need to clear and view cache of your laravel application, simply run the artisan command given below:</li>
-
-                        <li>php artisan view:clear</li>
-                    </ul>
+                    <li>one-to-one : One record in a table is associated with one, and only one, in another table. For example, a person and a social security number.</li>
+                    <li>one-to-many : One record is associated with multiple records in another table. For instance, a writer and their blogs.</li>
+                    <li>many-to-many : Multiple records in a table are associated with multiple records in another table. Namely, students and the courses they are enrolled in.</li>
                 </ul>
             </li>
+           
         </ul>
+
+
+
 
     </div>
 
