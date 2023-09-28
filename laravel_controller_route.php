@@ -9,12 +9,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Route In Latavel</title>
+    <title>Route In laravel</title>
 </head>
 
 <body>
     <div class="container mt-1">
-        <h1 class="text-center">Route In Latavel</h1>
+        <h1 class="text-center">Route In laravel</h1>
         What is a route in Laravel?
         <ul>
             <li>

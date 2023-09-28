@@ -14,8 +14,8 @@
 
 <body>
     <div class="container mt-1">
-        <h1 class="text-center">Route In Latavel</h1>
-        What is a route in Laravel?
+        <h1 class="text-center">PHP-Laravel-Using Forms and Gathering Input-Industry</h1>
+        Explain ORM ?
         <ul>
             <li>
                 <p>The route is a way of creating a request URL for your application.</p>
